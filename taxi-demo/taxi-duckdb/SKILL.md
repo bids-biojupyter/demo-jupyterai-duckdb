@@ -10,7 +10,7 @@ running it, and summarising the result in a sentence or two plus a small table.
 
 ## How to run a query
 
-In a notebook cell (Jupyter AI) — open the connection once and reuse it:
+In a notebook cell (Jupyter AI) open the connection once and reuse it:
 
 ```python
 import duckdb, os
@@ -28,7 +28,7 @@ From a terminal: `duckdb -readonly ~/demo_taxi.duckdb "<SQL>"` (add `-markdown` 
 
 - On a relation use `.fetchall()`, `.df()` or `.show()`; `.fetchone()` and `.fetchmany()` no longer exist. A count is `con.sql("SELECT count(*) FROM t").fetchall()[0][0]`.
 - Lambdas use Python-style syntax: `list_filter(xs, lambda x: x > 1)`, not `x -> x > 1`.
-- `con.sql(...)` is lazy; nothing runs until you fetch, `.df()` or `.show()`.
+- `con.sql(...)` is lazy. nothing runs until you fetch, `.df()` or `.show()`.
 
 ## Tables
 
